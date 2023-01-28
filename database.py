@@ -19,7 +19,7 @@ SQLALCHEMY_DATABASE_URL = 'postgresql://{}:{}@{}:{}/{}?sslmode={}'.format(
 
 # Test Database
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./memes.db"
+SQLALCHEMY_DATABASE_URL = "sqlite:///./youtube.db"
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
 )
