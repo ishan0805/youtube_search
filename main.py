@@ -28,7 +28,7 @@ app.add_middleware(
 )
 
 @app.on_event("startup")
-@repeat_every(seconds=20,wait_first=True)
+@repeat_every(seconds=5,wait_first=True)
 async def start():
     await get_youtube_data()
 
