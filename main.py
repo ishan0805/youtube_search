@@ -5,13 +5,14 @@ from database import  engine,Base
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi_utils.tasks import repeat_every
+from routers import video
 from services import get_youtube_data
 
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(docs_url='/swagger-ui/', port=8000)
 
-#app.include_router(.router)
+app.include_router(video.router)
 # for Cors control
 # enable support for ors
 origins = [
