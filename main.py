@@ -25,6 +25,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+"""
+This function will run at the start of the project , for scapping from the youtube API .
+"""
 @app.on_event("startup")
 @repeat_every(seconds=30,wait_first=True)
 async def start():

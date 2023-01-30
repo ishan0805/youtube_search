@@ -23,7 +23,9 @@ async def get_youtube_data():
 
         
         
-
+"""
+add video and thumbnails meta data to the db .
+"""
 def add_to_db(data):
     try:
         db=next(get_db())
@@ -61,7 +63,10 @@ def add_to_db(data):
 
 
 
-
+"""
+Get active api key from the db.
+If no api found -> Add new set of api_key from available api_keys into the db .
+"""
 def get_active_apikey():
     try:
         db=next(get_db())
@@ -89,7 +94,10 @@ def get_active_apikey():
         print(ex)
 
 
-    
+"""
+Change status of active key to inactive after quota has expired.
+Update time of expiry 
+"""
 def deactivate_apikey(key):
     try:
         db=next(get_db())
