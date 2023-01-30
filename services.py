@@ -72,7 +72,7 @@ def get_active_apikey():
         modified_date = time.replace(day=time.day-1)
    
 
-        data=db.query(ApiKey).filter(ApiKey.active==False,ApiKey.create_time>=modified_date).first()
+        data=db.query(ApiKey).filter(ApiKey.active==False,ApiKey.create_time<=modified_date).first()
         if data:
             return data.api_key
         
